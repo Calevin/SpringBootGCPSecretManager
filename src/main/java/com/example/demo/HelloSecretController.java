@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloSecretController {
-    @Value("${sm://greeting}")
+    @Value("${greeting}")
     String greeting;
 
     @Value("${greeting_prop}")
