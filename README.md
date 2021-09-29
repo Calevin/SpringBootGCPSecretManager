@@ -5,3 +5,6 @@ Example SpringBoot + Google Cloud Platform + Secret Manager
 ```
 gcloud auth application-default login
 ```
+
+
+https://codelabs.developers.google.com/codelabs/cloud-spring-cloud-gcp-secret-manager#0
