@@ -9,8 +9,11 @@ public class HelloSecretController {
     @Value("${sm://greeting}")
     String greeting;
 
+    @Value("${sm://greeting_prop}")
+    String greetingProp;
+
     @GetMapping("/")
     public String hello() {
-        return greeting + " World!";
+        return greeting + greetingProp + " World!";
     }
 }
