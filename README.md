@@ -71,5 +71,33 @@ greeting=${sm://greeting-prod}
 ./mvnw -DskipTests spring-boot:run -Dspring-boot.run.profiles=prod
 ```
 
+## Deploy
+1. inicializar y bajar componente
+```
+gcloud init
+
+gcloud components install app-engine-java
+
+```
+2. agregar /app.yaml
+```
+runtime: java11
+instance_class: F2
+```
+3. deployar
+```
+gcloud app deploy
+```
+ Ver logs en vivo
+ 
+```
+gcloud app logs tail -s default
+```
+
+*NOTA* para acceder a los secrets el user XXX@appspot.gserviceaccount.com requiere el rol Secret Manager Secret Accessor
+```
+go to IAM & Admin web UI, click ADD ANOTHER ROLE button, add Secret Manager Secret Accessor role to this service account.
+```
+
 ### Fuente:
 https://codelabs.developers.google.com/codelabs/cloud-spring-cloud-gcp-secret-manager#0
